@@ -46,7 +46,7 @@ export function BeforeAfterSlider() {
   return (
     <section className="relative py-28 overflow-hidden bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <motion.div
           variants={staggerContainer(0.1)}
@@ -78,7 +78,7 @@ export function BeforeAfterSlider() {
         </motion.div>
 
         {/* Slider Container */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewportOnce}
@@ -90,9 +90,9 @@ export function BeforeAfterSlider() {
         >
           {/* After Image (Background) */}
           <div className="absolute inset-0">
-            <img 
-              src={afterImg} 
-              alt="After Transformation" 
+            <img
+              src={afterImg}
+              alt="After Transformation"
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-6 right-8 glass px-4 py-2 rounded-xl text-xs font-bold text-white tracking-widest uppercase border border-white/10 backdrop-blur-md">
@@ -101,13 +101,13 @@ export function BeforeAfterSlider() {
           </div>
 
           {/* Before Image (Clipping Layer) */}
-          <div 
+          <div
             className="absolute inset-0 overflow-hidden"
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           >
-            <img 
-              src={beforeImg} 
-              alt="Before Transformation" 
+            <img
+              src={beforeImg}
+              alt="Before Transformation"
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-6 left-8 glass-elevated px-4 py-2 rounded-xl text-xs font-bold text-primary tracking-widest uppercase border border-primary/20 backdrop-blur-md">
@@ -116,14 +116,14 @@ export function BeforeAfterSlider() {
           </div>
 
           {/* Slider Handle */}
-          <div 
+          <div
             className="absolute top-0 bottom-0 w-1 bg-white/50 backdrop-blur-sm cursor-ew-resize group"
             style={{ left: `${sliderPosition}%` }}
           >
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass-elevated border-2 border-white/20 flex items-center justify-center shadow-glow-sm group-hover:scale-110 transition-transform duration-200">
               <MoveHorizontal className="w-5 h-5 text-white" />
             </div>
-            
+
             {/* Animated Glow Line */}
             <div className="absolute inset-y-0 -left-px w-[2px] bg-gradient-to-b from-transparent via-primary to-transparent opacity-50" />
           </div>
