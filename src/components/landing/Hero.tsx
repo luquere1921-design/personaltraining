@@ -67,8 +67,21 @@ export function Hero() {
       ref={sectionRef}
       className="relative min-h-[100svh] pt-32 md:pt-44 pb-24 overflow-hidden flex items-center"
     >
-      {/* Background glow orbs */}
+      {/* Background glow orbs + dot grid */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
+        {/* Dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.18]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, oklch(0.76 0.20 145 / 0.55) 1px, transparent 1px)",
+            backgroundSize: "36px 36px",
+            maskImage:
+              "radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%)",
+          }}
+        />
         <div className="absolute top-[-10%] right-[-5%] h-[600px] w-[600px] rounded-full bg-primary/10 blur-[130px] animate-drift-slow" />
         <div className="absolute bottom-[-5%] left-[-8%] h-[500px] w-[500px] rounded-full bg-accent/7 blur-[120px] animate-drift-reverse" />
         <div className="absolute top-[40%] left-[35%] h-[300px] w-[300px] rounded-full bg-primary/5 blur-[100px]" />
@@ -301,6 +314,16 @@ export function Hero() {
           className="h-8 w-[1px] bg-gradient-to-b from-primary/60 to-transparent"
         />
       </motion.div>
+      {/* Section Divider */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] transform rotate-180">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-[calc(100%+1.3px)] h-[40px] fill-background/50"
+        >
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+      </div>
     </section>
   );
 }

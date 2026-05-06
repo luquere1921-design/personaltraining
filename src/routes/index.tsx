@@ -10,14 +10,20 @@ import { Testimonials } from "@/components/landing/Testimonials";
 import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
+import { Contact } from "@/components/landing/Contact";
 import { Footer } from "@/components/landing/Footer";
 import { FloatingCTA } from "@/components/landing/FloatingCTA";
+import { CustomCursor } from "@/components/landing/CustomCursor";
+import { ScrollProgress } from "@/components/landing/ScrollProgress";
+import { TrustBar } from "@/components/landing/TrustBar";
+import { TransformationSpotlight } from "@/components/landing/TransformationSpotlight";
+import { BeforeAfterSlider } from "@/components/landing/BeforeAfterSlider";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
   name: "Alex Performance — Entrenador Personal Premium",
-  image: "https://alex-performance.com/og.jpg",
+  image: "/og.png",
   telephone: "+34600000000",
   email: "hola@alex-performance.com",
   address: { "@type": "PostalAddress", addressLocality: "Madrid", addressCountry: "ES" },
@@ -45,6 +51,7 @@ export const Route = createFileRoute("/")({
       { name: "keywords", content: "personal trainer madrid, entrenador personal online, body transformation, coaching premium fitness" },
       { property: "og:title", content: "Alex Performance — Entrenador Personal Premium" },
       { property: "og:description", content: "Transforma tu cuerpo. Domina tu disciplina. Coaching 1:1 para profesionales exigentes." },
+      { property: "og:image", content: "/og.png" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "es_ES" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -64,19 +71,25 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased">
+    <div className="min-h-screen bg-background text-foreground antialiased cursor-none page-fade-in noise-overlay">
+      <CustomCursor />
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
+        <TrustBar />
         <Stats />
         <Services />
         <Results />
+        <BeforeAfterSlider />
+        <TransformationSpotlight />
         <WhyMe />
         <Process />
         <Testimonials />
         <Pricing />
         <FAQ />
         <FinalCTA />
+        <Contact />
       </main>
       <Footer />
       <FloatingCTA />
