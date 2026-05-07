@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "@tanstack/react-router";
 import { getRouter } from "./router";
+import { Preloader } from "./components/landing/Preloader";
 import "./styles.css";
 
 const router = getRouter();
@@ -12,6 +13,7 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <React.StrictMode>
+      <Preloader />
       <RouterProvider router={router} />
     </React.StrictMode>
   );
